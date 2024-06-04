@@ -31,13 +31,11 @@ def checkValue():
                 
 
 def game():
-        cow = 0
         global playerScore 
         global computerScore
         global MAX
         while (playerScore + computerScore)<MAX:
           checkValue()
-          cow+=1
        
         finalRes = f"Player wins with: {playerScore}" if playerScore> computerScore else f"Computer wins with: {computerScore}"
         print(finalRes)
