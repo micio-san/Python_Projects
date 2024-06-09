@@ -18,7 +18,7 @@ def game():
         show_word= [letter if letter in letters_picked else '-' for letter in word]
         print('Current word: ', ' '.join(show_word))
         print(lives_visual_dict[lives])
-        print(len(letter_right) == len(letters_in_word), word)
+        #print(len(letter_right) == len(letters_in_word), word)
         userInput= input("Please pick  a letter!:  ")
         if len(userInput) == 1 and userInput.isalnum():
             userInputL = userInput.lower()
@@ -34,5 +34,5 @@ def game():
                 print("You have already inserted this character")
         else:
             print("This character is not valid, try again!")
-
+    print('Current word: ', word)
 game()
