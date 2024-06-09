@@ -13,6 +13,7 @@ def game():
     letters_picked=set()
     letters_in_word=set(word)
     lives = 7
+    print("assibus")
     letter_right=set()
     while len(letter_right) != len(letters_in_word) and lives > 0:
         show_word= [letter if letter in letters_picked else '-' for letter in word]
@@ -34,10 +35,5 @@ def game():
                 print("You have already inserted this character")
         else:
             print("This character is not valid, try again!")
-<<<<<<< HEAD
     print('Current word: ', word)
 game()
-=======
-
-game()
->>>>>>> ee8d7a3752d1ccc54b2dc18bfa15417e81780cce
