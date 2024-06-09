@@ -34,5 +34,10 @@ def game():
                 print("You have already inserted this character")
         else:
             print("This character is not valid, try again!")
+<<<<<<< HEAD
     print('Current word: ', word)
 game()
+=======
+
+game()
+>>>>>>> ee8d7a3752d1ccc54b2dc18bfa15417e81780cce
