@@ -1,0 +1,85 @@
+from tkinter import * 
+from tkinter.ttk import *
+
+window= Tk()
+pad=[
+  {
+     "text":"CE",
+     type:"func",
+     "width":3,
+  },{
+     "text":"C",
+     type:"func",
+     "width":3,
+  },{
+     "text":"DEL",
+     type:"func",
+     "width":3,
+  },{
+     "text":"/",
+     type:"func",
+     "width":3,
+  },{
+     "text":"7",
+     "width":3,
+     type:"num",
+  },{
+     "text":"8",
+     "width":3,
+     type:"num",
+  },{
+     "text":"9",
+     "width":3,
+     type:"num",
+  },{
+     "text":"X",
+     "width":3,
+     type:"op",
+  },{
+     "text":"4",
+     type:"num",
+     "width":3,
+  },{
+     "text":"5",
+     type:"num",
+     "width":3,
+  },{
+     "text":"6",
+     type:"num",
+     "width":3,
+  },{
+    "text":"-",
+    type:"op",
+    "width":3,
+  },{
+     "text":"1",
+     type:"num",
+     "width":3,
+  },{
+     "text":"2",
+     type:"num",
+     "width":3,
+  },{
+     "text":"3",
+     type:"num",
+     "width":3,
+  },{
+    "text":"+",
+    type:"op",
+    "width":3,
+  },{
+     "text":",",
+     type:"num",
+     "width":3,
+  },{
+     "text":"0",
+     type:"num",
+     "width":3,
+  },{
+    "text":"=",
+    type:"op",
+    "width":6,
+  }
+]
+
+window.mainloop()
