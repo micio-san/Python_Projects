@@ -3,6 +3,7 @@ from tkinter.ttk import *
 
 window= Tk()
 frame = Frame(window)
+first_str=StringVar()
 
 pad=[
  [{
