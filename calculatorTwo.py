@@ -129,6 +129,8 @@ def handleFunc(row, column):
        case "C":
          valueOne=""
          showValues(valueOne, calculator_screen)
+       case "DEL":
+         showValues(valueOne, calculator_screen)
          
         
 def handleOps(row, column, action_kind):
