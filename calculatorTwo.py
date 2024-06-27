@@ -1,3 +1,4 @@
+from calculatorTwoUtilities.pad import pad
 from tkinter import * 
 from tkinter.ttk import *
 
@@ -18,87 +19,6 @@ labelTwo= Label(textvariable=calculator_screen_sm)
 showLabelTwo = 0 if len(valueTwo)==0 else 3
 labelTwo.grid(row=0, column=showLabelTwo)
 evaluated=FALSE
-
-pad=[
- [{
-     "text":"CE",
-     "type":"func",
-     "width":10,
-  },{
-     "text":"C",
-     "type":"func",
-     "width":10,
-  },{
-     "text":"DEL",
-      "type":"func",
-     "width":10,
-  },{
-     "text":"/",
-     "type":"func",
-     "width":10,
-  }] ,
-  [{
-     "text":"7",
-     "width":10,
-     "type":"num",
-  },{
-     "text":"8",
-     "width":10,
-     "type":"num",
-  },{
-     "text":"9",
-     "width":10,
-     "type":"num",
-  },{
-     "text":"*",
-     "width":10,
-     "type":"op",
-  }],[{
-     "text":"4",
-     "type":"num",
-     "width":10,
-  },{
-     "text":"5",
-     "type":"num",
-     "width":10,
-  },{
-     "text":"6",
-     "type":"num",
-     "width":10,
-  },{
-    "text":"-",
-    "type":"op",
-    "width":10,
-  }],[{
-     "text":"1",
-     "type":"num",
-     "width":10,
-  },{
-     "text":"2",
-     "type":"num",
-     "width":10,
-  },{
-     "text":"3",
-     "type":"num",
-     "width":10,
-  },{
-    "text":"+",
-    "type":"op",
-    "width":10,
-  }],[{
-     "text":",",
-     "type":"num",
-     "width":10,
-  },{
-     "text":"0",
-     "type":"num",
-     "width":10,
-  },{
-    "text":"=",
-    "type":"func",
-    "width":10,
-  }]
-]
 
 def showValues(value, displayer): {
   displayer.set(value)
