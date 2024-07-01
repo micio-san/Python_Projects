@@ -31,3 +31,4 @@ class HumanPlayer(Player):
             except ValueError:
                 print("Wrong try again")
             return val
+    

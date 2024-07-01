@@ -24,3 +24,9 @@ class TicTacToe:
        # return moves
        #alternative syntax wirh list comprehension
        return [i for i, spot in enumerate(self.board) if spot == '']
+    
+def play(game, x_player, o_playyer, print_game=True):
+    if print_game:
+        game.print_board_nums()
+    letter="X"
+    
