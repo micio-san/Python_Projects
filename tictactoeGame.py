@@ -1,8 +1,10 @@
+from tictactoePlayer import RandomPcPlayer, HumanPlayer
+
 class TicTacToe:
     def __init__(self) -> None:
         # the _ indicates a temporary or throwaway variable
         self.board=[" " for _ in range(9)] #=>[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-        self.currentWinner=None
+        self.current_winner=None
 
     def print_board(self):
        for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
@@ -12,8 +14,10 @@ class TicTacToe:
     def print_board_nums():
      number_board=[[str(i) for i in range(j*3,(j+1)*3)] for j in range(3)]
      for row in number_board:
+        celle = ""
         for cell in row:
-           print(cell)
+           celle = celle + '| ' + cell + ' |'
+        print(celle)
 
     def available_moves(self):
        moves=[]
@@ -34,27 +38,61 @@ class TicTacToe:
     def make_move(self, square, letter):
        if self.board == ' ':
           self.board[square]=letter
+          if self.winner(square, letter):
+             self.current_winner = letter 
           return True
        else:
           return False
-          
+    
+    def winner(self, square, letter):
+       row_index = square // 3
+       row= self.board[row_index*3: (row_index + 1)*3] 
+       #check rows
+       if all([spot == letter for spot in row]):
+          return True
+       
+       col_ind= square % 3
+       column = [self.board[col_ind + 1 * 3] for i in range(3)]
+       if all([spot == letter for spot in column]):
+          return True
+        #0,2,4,6,8
+       if square % 2 ==0:
+          diagonal1 = [self.board[i] for i in [0,4,8]]
+          if all([spot == letter for spot in diagonal1]):
+             return True
+          diagonal2 = [self.board[i] for i in [2,4,6]]         
+          if all([spot == letter for spot in diagonal2]): 
+             return True
+        
+       return False
 
-def play(game, x_player, o_playyer, print_game=True):
+def play(game, x_player, o_player, print_game=True):
     if print_game:
         game.print_board_nums()
     letter="X"
+
     while game.empty_squares():
         if letter == "X":
-            o_playyer.get_move(game)
+            square= o_player.get_move(game)
         else:
-            x_player.get_move(game)
+            square= x_player.get_move(game)
 
-#24 dun2//
-#23 hod/fr
-#22 dun1/get-ou
-#21 
-#20 fllv
-#19 thD
-#18 ddar/whitel
-k = [" " for _ in range(9)]
-print("ass", k)
+        if game.make_move(square,letter):
+           if print_game:
+              print(letter + ' makes a moveon square {square}')
+              game.print_board()
+           if game.current_winner:
+              if print_game:
+                 print('{letter}has won')
+              return letter
+        
+        letter = "O" if letter == "X" else "O"
+        if print_game:
+           print("It's a tie!")
+
+if __name__ == '__main__':
+   x_player = HumanPlayer("X")
+   o_player = RandomPcPlayer("O")
+   t=TicTacToe()
+   play(t, x_player, o_player, True)
+
