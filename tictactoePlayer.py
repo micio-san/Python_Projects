@@ -26,10 +26,11 @@ class HumanPlayer(Player):
             square=input(self.letter + "'s turn" )
             try:
                val=int(square)
+               print("ass", val)
                if val not in game.available_moves():
                    raise ValueError
                valid_square=True
             except ValueError:
                 print("Wrong try again")
-            return val
+        return val
     
