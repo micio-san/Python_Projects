@@ -1,13 +1,13 @@
 class TicTacToe:
     def __init__(self) -> None:
         # the _ indicates a temporary or throwaway variable
-        self.board=[" " for _ in range(9)]
+        self.board=[" " for _ in range(9)] #=>[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
         self.currentWinner=None
 
     def print_board(self):
        for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
            print('| ' + ' | '.join(row) + " |")
-
+    #
     @staticmethod
     def print_board_nums():
      number_board=[[str(i) for i in range(j*3,(j+1)*3)] for j in range(3)]
@@ -22,11 +22,39 @@ class TicTacToe:
        #    if spot == ' ' :
        #       moves.append(i)
        # return moves
-       #alternative syntax wirh list comprehension
-       return [i for i, spot in enumerate(self.board) if spot == '']
+       #alternative syntax with list comprehension
+       return [i for i, spot in enumerate(self.board) if spot == ' ']
     
+    def empty_squares(self):
+       return ' ' in self.board
+    
+    def num_empy_squares(self):
+        return self.board.count()
+    
+    def make_move(self, square, letter):
+       if self.board == ' ':
+          self.board[square]=letter
+          return True
+       else:
+          return False
+          
+
 def play(game, x_player, o_playyer, print_game=True):
     if print_game:
         game.print_board_nums()
     letter="X"
-    
+    while game.empty_squares():
+        if letter == "X":
+            o_playyer.get_move(game)
+        else:
+            x_player.get_move(game)
+
+#24 dun2//
+#23 hod/fr
+#22 dun1/get-ou
+#21 
+#20 fllv
+#19 thD
+#18 ddar/whitel
+k = [" " for _ in range(9)]
+print("ass", k)

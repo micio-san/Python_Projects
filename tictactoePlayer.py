@@ -13,6 +13,7 @@ class RandomPcPlayer(Player):
 
     def get_move(self, game):
         square= random.choice(game.available_moves())
+        return square
 
 class HumanPlayer(Player):
     def __init__(self, letter):
