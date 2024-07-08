@@ -86,6 +86,8 @@ def play(game, x_player, o_player, print_game=True):
                  print(letter + ' has won')
                  return letter
               letter = "O" if letter == "X" else "X"
+    if print_game:
+        print('It\'s a tie!')    
 
 # type of __name__ = __main__, it's the default name of 
 # the file that runs and it's not imported, python first reads the files that are imported 
