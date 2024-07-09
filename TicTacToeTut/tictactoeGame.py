@@ -1,4 +1,4 @@
-from tictactoePlayer import RandomPcPlayer, HumanPlayer
+from Python_Projects.TicTacToeTut.tictactoePlayer import RandomPcPlayer, HumanPlayer
 
 class TicTacToe:
     def __init__(self) -> None:
@@ -87,8 +87,7 @@ def play(game, x_player, o_player, print_game=True):
                  return letter
               letter = "O" if letter == "X" else "X"
     if print_game:
-        print('It\'s a tie!')    
-
+        print('It\'s a tie!')
 # type of __name__ = __main__, it's the default name of 
 # the file that runs and it's not imported, python first reads the files that are imported 
 # completely.
