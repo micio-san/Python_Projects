@@ -3,3 +3,4 @@
 ## Beginner projects ##
   * Madlibs
   * Rock paper scissors
+  * Tkinter calculator
