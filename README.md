@@ -4,3 +4,5 @@
   * Madlibs
   * Rock paper scissors
   * Tkinter calculator
+  * Hangman
+  * TicTacToe
