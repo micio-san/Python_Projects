@@ -6,3 +6,4 @@
   * Tkinter calculator
   * Hangman
   * TicTacToe
+  * Text slot machine
