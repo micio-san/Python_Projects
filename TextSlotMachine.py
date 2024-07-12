@@ -109,7 +109,7 @@ def print_slot(columns):
 def game():
     lines = get_number_of_lines()
     bet = amount_to_bet()
-    print(f"You are betting {str(bet)}$ on {str(lines)} lines for a total amount of {int(bet) * int(lines)}$ and you deposited {str(balance)}$")
+    print(f"You are betting {str(bet)}$ on {str(lines)} lines for a total amount of {int(bet) * int(lines)}$$")
     slots = get_slot_machine_spin(ROWS, COLS, symbols_count)
     print_slot(slots)
     winning, winning_lines = check_winner(slots,int(lines), int(bet), symbols_values)
@@ -120,7 +120,11 @@ def game():
 
 def main():
     balance = deposit()
-    while 
+    while True:
+        print("Current balace is")
+        spin = input("Press enter to spin (q to quit)")
+        if spin == "q":
+            break;
  
    
 
