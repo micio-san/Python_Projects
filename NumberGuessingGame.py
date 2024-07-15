@@ -7,6 +7,7 @@
 #Else if the user didn’t guess the integer in the minimum number of guesses, he/she will get “Better Luck Next Time!” output.
 
 import random
+import math
 
 def get_lower_and_upper(lower):
     while True:
@@ -27,27 +28,30 @@ def main():
         lower = get_lower_and_upper(True)
         upper = get_lower_and_upper(False)
     randomInt = random.randint(lower, upper)
-    chances = 5;
+    chances = math.ceil(math.log(upper - lower + 1, 2))
+    print(f"You have a total of: {chances} chances!")
     tries=0;
-    while True:
+    win=False
+    while  chances >= tries or win==True:
+        print(tries, randomInt)
         guess= input(f"Guess a number between {lower} and {upper}")
         if guess.isdigit():
             guess = int(guess)
             if lower < guess < upper:
                 if guess == randomInt:
-                  print(f"Congratulations, you beat the game in {tries} tries")
-                  return
-                elif guess > randomInt :
-                    print("Try Again! You guessed too high")
+                  win=True
+                elif guess > randomInt :                    
                     tries=tries+1;
+                    print(f"Try Again! You guessed too high, but  you still have {chances -tries} tries")  if tries != chances else print("")
                 else:
-                    print("Try Again! You guessed too small")
                     tries=tries+1;
+                    print(f"Try Again! You guessed too small but you still have {chances -tries} tries") if tries != chances else print("")
             else:
-               input(f"Guess a number between {lower} and {upper}")
+               input(f"Guess a number between {lower} and {upper}!")
         else:
             print(f"The solution is a number!")
-        
+    else: 
+        print("You do not have any more chances! D:") if tries > chances else  print("You win!")
 
 
 if __name__== "__main__":
