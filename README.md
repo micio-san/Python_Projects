@@ -6,5 +6,5 @@
   * Tkinter calculator
   * Hangman
   * TicTacToe
-  * Text slot machin
+  * Text slot machine
   * Number guessing game
