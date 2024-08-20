@@ -8,3 +8,4 @@
   * TicTacToe
   * Text slot machine
   * Number guessing game
+  * My first api with flask
