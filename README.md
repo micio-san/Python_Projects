@@ -8,3 +8,5 @@
   * TicTacToe
   * Text slot machine
   * Number guessing game
+  * Api
+    * requests library
