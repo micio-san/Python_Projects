@@ -1,3 +1,5 @@
+#dir(varial) 4 methods and props
+#help for checking what is what
 from dotenv import load_dotenv
 import requests
 import os
@@ -13,11 +15,14 @@ def get_current_weather():
         get_current_weather()
     else:
         request_url = f'https://api.openweathermap.org/data/2.5/weather?appid={os.getenv("API_KEY")}&q={city}&units=metric'
-        print(request_url)
-        weather_data= requests.get(request_url).json()
-        if "message" in weather_data.keys():
-            print("thee", weather_data.message)
-        pprint(weather_data)
+        weather_data= requests.get(request_url)
+        weather_data_parsed= weather_data.json()
+        if weather_data.status_code != 200:
+            print("error!")
+        else:
+         pprint(weather_data_parsed)
 
-if __name__=="__main__":
-   get_current_weather()
+# if __name__=="__main__":
+#    get_current_weather()
+
+
